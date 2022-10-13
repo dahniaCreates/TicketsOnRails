@@ -1,0 +1,13 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  ticket_number: 1
+  date: MyString
+  discounted_fine: 1.5
+  full_fine: 1
+
+two:
+  ticket_number: 1
+  date: MyString
+  discounted_fine: 1.5
+  full_fine: 1
