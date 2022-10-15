@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'officers/index'
+  get 'officers/show'
   get 'streets/index'
   get 'streets/show'
   get 'tickets/index'

@@ -1,0 +1,6 @@
+<h2><%=@officer.name%></h2>
+<ul>
+<% @ticketswritten.each do |ticketwritten|%>
+  <li><%=link_to ticketwritten.ticket_number, ticketwritten%></li>
+<%end%>
+</ul>
