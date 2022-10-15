@@ -1,0 +1,16 @@
+<h2>Ticket Number: <%=@ticket.ticket_number%></h2>
+
+<% @category_tickets.each do |category_ticket|%>
+  <h4>Category: <%= link_to @ticket.category.name, category_ticket%></h4>
+<%end%>
+
+<p>Issue Date: <%=@ticket.date%></p>
+<% @ticket_on_streets.each do |ticket_on_street|%>
+  <p>Street Issued On: <%=link_to @ticket.street.name, ticket_on_street%></p>
+<%end%>
+<p>Discounted Fine: $<%=@ticket.discounted_fine%></p>
+<p>Full Fine: $<%=@ticket.full_fine%></p>
+<% @officer_tickets.each do |officer_ticket|%>
+  <p>Officer Issued By: <%= link_to @ticket.officer.name, officer_ticket%></p>
+<%end%>
+

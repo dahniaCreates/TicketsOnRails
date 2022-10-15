@@ -1,0 +1,6 @@
+<h1>All Streets</h1>
+<ol>
+  <% @streets.each do |street| %>
+    <li>Streets => <%= link_to street.name, street%> </li>
+  <%end%>
+</ol>

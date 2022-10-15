@@ -1,0 +1,18 @@
+<h1>All Violation Tickets</h1>
+
+<%= paginate @tickets, theme:'bootstrap-5'%>
+
+<div class="row">
+ <% @tickets.each do |ticket| %>
+  <div class="col-sm-3">
+    <div class="card" style="width: 18rem;">
+      <div class="card-body">
+        <h5 class="card-title"><%= ticket.ticket_number%></h5>
+        <%= link_to "See ticket details", ticket, class: "btn btn-primary"%>
+      </div>
+    </div>
+</div>
+<%end%>
+</div>
+
+
