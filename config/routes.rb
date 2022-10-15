@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'about/index'
   get 'categories/index'
   get 'categories/show'
   get 'officers/index'
@@ -15,4 +16,5 @@ Rails.application.routes.draw do
   resources :categories, only: [:index, :show]
   resources :officers, only: [:index, :show]
   resources :streets, only: [:index, :show]
+  resources :about, only: [:index]
 end

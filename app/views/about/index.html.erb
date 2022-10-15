@@ -1,0 +1,40 @@
+<h1>About This Site</h1>
+
+<div>
+  <p>For this project, two data sources were selected to create a simulated parking ticket site that
+  records tickets issued in Winnipeg. The first data source comes from the City of Winnipeg Open Data
+  Portal, particularly the "Parking Ticket" dataset. This data was extracted in a .csv file (limited to 1000 records)
+  and utilized for extraction to various database tables. The Parking Tickets dataset outlines the type of violation that
+  occurred, the streets on which parking tickets were issued, the date they were issued on, the discounted fine, the full fine
+  to be paid and points that can be used for mapping data. All data except the points for mapping was used on the site.
+  The second data source that was selected was from Faker. This data was used to fake data of police officer’s names that
+  issued these tickets, and it was also used to fake a unique code which was used as parking ticket numbers. </p>
+  <p>
+    With both datasets combined, this website will inform anyone browsing it for information of parking tickets issued
+    in Winnipeg, on which streets, the dates the tickets were issued, the associated fines, the police officer that issued
+    that ticket and  the type of violation that occurred.
+  </p>
+
+  <p>
+  The database for this site holds 5 tables, namely: Tickets, Officers, Streets, Street_Categories and Categories.
+  The Tickets table contains all the details about the tickets issued including: the ticket number, date, discounted fine,
+  full fine,  related officer id and related street. The Officers table contains the  names of 200 officers. The Streets
+  table contains the name of the streets on which the tickets were issued. The Categories table contains the name of all
+  the violations that occurred. The Street_Categories table is a join table that represents a many to many relationship
+  between streets and categories, it contains data to show all the streets that a violation occurred on and all the violations
+  that occurred on a street, which is represented by the street_id and category_id.
+  </p>
+
+  <p>
+  Below is an ERD representation of the relationships in the database
+  </p>
+
+   <%= image_tag "Final_ERD_Diagram_Full_Stack.png",  class: 'd-block mx-auto'  %>
+
+  <p>
+    <strong>Description:</strong> A ticket can be issued by one officer, but an officer can write many tickets;
+    A ticket can be issued on one street, but a street can have many  tickets issued on it;
+    A ticket can belong to one category(or have a single violation), but many tickets can be written for a violation;
+    A street can have many violations occur on it, and a violation can take place on many streets.
+  </p>
+</div>
