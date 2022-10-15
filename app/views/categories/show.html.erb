@@ -1,0 +1,12 @@
+<h2><%=@category.name%></h2>
+<ul>
+<% @tickets_in_category.each do |ticket_in_category|%>
+  <li>All tickets => <%=link_to ticket_in_category.ticket_number, ticket_in_category%></li>
+<%end%>
+</ul>
+
+<ul>
+<% @distinct_streets_in_category.each do |distinct_street_in_category|%>
+  <li>All streets that violations took place on => <%=link_to distinct_street_in_category.street.name, distinct_street_in_category.street%></li>
+<%end%>
+</ul>
