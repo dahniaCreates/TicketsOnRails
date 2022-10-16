@@ -13,6 +13,42 @@
 
   <body>
   <div class="container">
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+  <a class="navbar-brand" href="#">Parking Tickets</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+    <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+      <li class="nav-item active">
+        <a class="nav-link" href="#">Tickets <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Violation Categories</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Officers</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Streets</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">About</a>
+      </li>
+    </ul>
+
+    <form class="form-inline my-2 my-lg-0">
+      <%= form_with(url: search_tickets_path, method: :get, local: true) do%>
+      <%=text_field(:keywords, nil, class: "form-control mr-sm-2", placeholder: 'Search a ticket number')%>
+      <div class="control">
+      <%=submit_tag("Search", class: "btn btn btn-dark my-2 my-sm-0")%>
+      </div>
+      <%end%>
+    </form>
+
+  </div>
+</nav>
     <%= yield %>
   </div>
   </body>
