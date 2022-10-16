@@ -1,12 +1,24 @@
-<h2><%=@street.name%></h2>
-<ul>
-<% @distinct_street_categories.each do |distinct_street_category|%>
-  <li><%=link_to distinct_street_category.category.name, distinct_street_category.category%></li>
-<%end%>
-</ul>
-
-<ul>
-  <% @tickets_on_street.each do |ticket_on_street|%>
-    <li><%=link_to ticket_on_street.ticket_number, ticket_on_street%></li>
+<h2>Street: <%=@street.name%></h2>
+<h5>All Tickets and Violations that occured on "<%=@street.name%>" street</h5>
+<div class="row mt-5">
+  <div class="col">
+  <div class="list-group">
+    <div class="list-group-item list-group-item-action active">
+      Category
+    </div>
+    <% @distinct_street_categories.each do |distinct_street_category|%>
+      <%=link_to distinct_street_category.category.name, distinct_street_category.category, class: "list-group-item list-group-item-action"%>
+    <%end%>
+</div>
+</div>
+<div class="col">
+<div class="list-group">
+  <div class="list-group-item list-group-item-action active">
+    Ticket
+  </div>
+     <% @tickets_on_street.each do |ticket_on_street|%>
+    <%=link_to ticket_on_street.ticket_number, ticket_on_street, class: "list-group-item list-group-item-action"%>
   <%end%>
-</ul>
+</div>
+</div>
+</div>
