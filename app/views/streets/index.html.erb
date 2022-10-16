@@ -1,6 +1,17 @@
 <h1>All Streets</h1>
-<ol>
-  <% @streets.each do |street| %>
-    <li>Streets => <%= link_to street.name, street%> </li>
-  <%end%>
-</ol>
+
+<div class="d-flex flex-row-reverse">
+  <%= paginate @streets, theme:'bootstrap-5'%>
+</div>
+<div class="row">
+ <% @streets.each do |street| %>
+  <div class="col-sm-3">
+    <div class="card h-100" style="width: 18rem;">
+      <div class="card-body">
+        <h5 class="card-title"><%=street.name%></h5>
+        <%= link_to "See street details", street, class: "btn btn-primary"%>
+      </div>
+    </div>
+</div>
+<%end%>
+</div>

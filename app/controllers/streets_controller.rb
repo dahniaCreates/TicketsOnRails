@@ -1,6 +1,6 @@
 class StreetsController < ApplicationController
   def index
-    @streets = Street.includes(:categories).all
+    @streets = Street.includes(:categories).page(params[:page])
   end
 
   def show
