@@ -9,4 +9,10 @@ class TicketsController < ApplicationController
     @officer_tickets = Officer.where(id: @ticket.officer_id)
     @ticket_on_streets = Street.where(id: @ticket.street_id)
   end
+
+  def search
+    wildcard_search = "%#{params[:keywords]}%"
+
+    @tickets = Ticket.where("ticket_number LIKE ?", wildcard_search)
+  end
 end

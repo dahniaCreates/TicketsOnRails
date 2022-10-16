@@ -37,16 +37,14 @@
         <a class="nav-link" href="#">About</a>
       </li>
     </ul>
-
-    <form class="form-inline my-2 my-lg-0">
-      <%= form_with(url: search_tickets_path, method: :get, local: true) do%>
-      <%=text_field(:keywords, nil, class: "form-control mr-sm-2", placeholder: 'Search a ticket number')%>
-      <div class="control">
-      <%=submit_tag("Search", class: "btn btn btn-dark my-2 my-sm-0")%>
-      </div>
-      <%end%>
-    </form>
-
+    <%= form_with(url: search_tickets_path, method: :get, local: true) do %>
+      <form>
+        <div class="form-inline my-2 my-lg-0">
+          <%= text_field_tag(:keywords, nil, class: "form-control mr-sm-2", placeholder: 'Search a ticket number')%>
+          <%=submit_tag("Search", class: "btn btn btn-dark my-2 my-sm-0")%>
+        </div>
+      </form>
+    <%end%>
   </div>
 </nav>
     <%= yield %>
