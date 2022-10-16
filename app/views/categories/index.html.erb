@@ -1,7 +1,18 @@
-<h1>Violation Categories</h1>
-<ul>
-  <% @categories.each do |category| %>
-  <li><%=link_to category.name, category%></li>
-  <%end%>
-</ul>
+<h1>All Violation Categories</h1>
+
+<div class="d-flex flex-row-reverse">
+  <%= paginate @categories, theme:'bootstrap-5'%>
+</div>
+<div class="row">
+ <% @categories.each do |category| %>
+  <div class="col-sm-3">
+    <div class="card h-100" style="width: 18rem;">
+      <div class="card-body">
+        <h5 class="card-title"><%= link_to category.name%></h5>
+        <%= link_to "See violation details", category, class: "btn btn-primary"%>
+      </div>
+    </div>
+</div>
+<%end%>
+</div>
 
