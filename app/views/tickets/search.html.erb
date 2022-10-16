@@ -1,8 +1,20 @@
-<p class="mb-5">
+<h1 class="mt-5">Search results</h1>
+<h4 class="mt-1">
   Your search for <%=params[:keywords]%> found <%= pluralize(@tickets.count, 'ticket')%>
-</p>
-<ul>
-  <% @tickets.each do |ticket|%>
-  <li><%= link_to ticket.ticket_number, ticket%></li>
-  <%end%>
-</ul>
+</h4>
+
+<div class="d-flex flex-row-reverse">
+  <%= paginate @tickets, theme:'bootstrap-5'%>
+</div>
+<div class="row mt-5">
+ <% @tickets.each do |ticket| %>
+  <div class="col-sm-3">
+    <div class="card h-100" style="width: 18rem;">
+      <div class="card-body">
+        <h5 class="card-title"><%=ticket.ticket_number%></h5>
+        <%= link_to "See ticket details", ticket, class: "btn btn-primary"%>
+      </div>
+    </div>
+</div>
+<%end%>
+</div>

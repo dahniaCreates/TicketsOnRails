@@ -13,6 +13,6 @@ class TicketsController < ApplicationController
   def search
     wildcard_search = "%#{params[:keywords]}%"
 
-    @tickets = Ticket.where("ticket_number LIKE ?", wildcard_search)
+    @tickets = Ticket.where("ticket_number LIKE ?", wildcard_search).page(params[:page])
   end
 end

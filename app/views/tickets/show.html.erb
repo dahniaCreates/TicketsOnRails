@@ -1,16 +1,19 @@
-<h2>Ticket Number: <%=@ticket.ticket_number%></h2>
+<div class="card mt-4" style="width: 50rem;">
+  <div class="card-body">
 
-<% @category_tickets.each do |category_ticket|%>
-  <h4>Category: <%= link_to @ticket.category.name, category_ticket%></h4>
-<%end%>
+    <h5 class="card-title">Ticket Number: <%=@ticket.ticket_number%></h5>
 
-<p>Issue Date: <%=@ticket.date%></p>
-<% @ticket_on_streets.each do |ticket_on_street|%>
-  <p>Street Issued On: <%=link_to @ticket.street.name, ticket_on_street%></p>
-<%end%>
-<p>Discounted Fine: $<%=@ticket.discounted_fine%></p>
-<p>Full Fine: $<%=@ticket.full_fine%></p>
-<% @officer_tickets.each do |officer_ticket|%>
-  <p>Officer Issued By: <%= link_to @ticket.officer.name, officer_ticket%></p>
-<%end%>
-
+    <% @category_tickets.each do |category_ticket|%>
+    <h6 class="card-subtitle mb-2 text-muted">Category: <%= link_to @ticket.category.name, category_ticket%></h6>
+    <%end%>
+     <p class="card-text">Issue Date: <%=@ticket.date%></p>
+    <% @ticket_on_streets.each do |ticket_on_street|%>
+    <p class="card-text">Street Issued On: <%=link_to @ticket.street.name, ticket_on_street%></p>
+    <%end%>
+    <p class="card-text">Discounted Fine: $<%=@ticket.discounted_fine%></p>
+    <p class="card-text">Full Fine: $<%=@ticket.full_fine%></p>
+   <% @officer_tickets.each do |officer_ticket|%>
+    <p class="card-text">Officer Issued By: <%= link_to @ticket.officer.name, officer_ticket%></p>
+    <%end%>
+  </div>
+</div>
