@@ -1,12 +1,24 @@
-<h2><%=@category.name%></h2>
-<ul>
-<% @tickets_in_category.each do |ticket_in_category|%>
-  <li>All tickets => <%=link_to ticket_in_category.ticket_number, ticket_in_category%></li>
-<%end%>
-</ul>
-
-<ul>
-<% @distinct_streets_in_category.each do |distinct_street_in_category|%>
-  <li>All streets that violations took place on => <%=link_to distinct_street_in_category.street.name, distinct_street_in_category.street%></li>
-<%end%>
-</ul>
+<h1>Violation Category: <%=@category.name%></h1>
+<h5>All Tickets and Streets in the "<%=@category.name%>" category</h5>
+<div class="row mt-5">
+  <div class="col">
+  <div class="list-group">
+    <div class="list-group-item list-group-item-action active">
+      Tickets
+    </div>
+    <% @tickets_in_category.each do |ticket_in_category|%>
+        <%=link_to ticket_in_category.ticket_number, ticket_in_category, class: "list-group-item list-group-item-action"%>
+    <%end%>
+</div>
+</div>
+<div class="col">
+<div class="list-group">
+  <div class="list-group-item list-group-item-action active">
+    Streets
+  </div>
+    <% @distinct_streets_in_category.each do |distinct_street_in_category|%>
+        <%=link_to distinct_street_in_category.street.name, distinct_street_in_category.street , class: "list-group-item list-group-item-action"%>
+    <%end%>
+</div>
+</div>
+</div>
