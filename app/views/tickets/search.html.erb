@@ -1,5 +1,5 @@
 <p class="mb-5">
-  Found <%= pluralize(@tickets.count, 'Ticket')%>Tickets found when search for: <%=params[:keywords]%>
+  Your search for <%=params[:keywords]%> found <%= pluralize(@tickets.count, 'ticket')%>
 </p>
 <ul>
   <% @tickets.each do |ticket|%>
